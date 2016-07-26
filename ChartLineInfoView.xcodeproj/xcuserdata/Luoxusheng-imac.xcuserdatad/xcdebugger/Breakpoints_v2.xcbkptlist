@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChartLineInfoView/ChartLineInfoView.m"
-            timestampString = "491224344.080724"
+            timestampString = "491225228.601314"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
             landmarkName = "-addRightBezierPoint"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChartLineInfoView/ChartLineInfoView.m"
-            timestampString = "491224344.080724"
+            timestampString = "491225228.601314"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "425"
-            endingLineNumber = "425"
+            startingLineNumber = "440"
+            endingLineNumber = "440"
             landmarkName = "-addLeftBezierPoint"
             landmarkType = "5">
          </BreakpointContent>

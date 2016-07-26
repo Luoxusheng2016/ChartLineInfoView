@@ -277,7 +277,10 @@
 
 -(void)addRightBezierPoint{
     
-    CGFloat lastY = lastPoint.y;
+    CGPoint point = [[self.rightPointArr objectAtIndex:0] CGPointValue];
+
+    
+    CGFloat lastY = point.y;
     
     UIBezierPath *beizer = [UIBezierPath bezierPath];
     [beizer moveToPoint:CGPointMake(5, lastY)];
@@ -288,17 +291,20 @@
     bezier1.lineJoinStyle = kCGLineJoinMiter;
     [bezier1 moveToPoint:CGPointMake(5, lastY)];
     
+    CGFloat bgViewHeight = self.bgView2.bounds.size.height;
     
-    
-    for (int i = 0;i<self.leftPointArr.count;i++ ) {
+    for (int i = 0;i<self.rightPointArr.count;i++ ) {
         if (i != 0) {
             
             CGPoint point = [[self.rightPointArr objectAtIndex:i] CGPointValue];
             [beizer addLineToPoint:point];
              [bezier1 addLineToPoint:point];
             if (i == self.leftPointArr.count-1) {
-                [beizer moveToPoint:point];//添加连线
-                lastPoint = point;
+                
+                    [beizer moveToPoint:point];//添加连线
+                    lastPoint = point;
+                    
+
             }
             
             
@@ -309,7 +315,7 @@
     }
     
     
-    CGFloat bgViewHeight = self.bgView2.bounds.size.height;
+   
     
     //获取最后一个点的X值
     CGFloat lastPointX = lastPoint.x;
@@ -405,7 +411,8 @@
     bezier1.lineJoinStyle = kCGLineJoinMiter;
     [bezier1 moveToPoint:p1];
   
-    
+    CGFloat bgViewHeight = self.bgView1.bounds.size.height;
+
     for (int i = 0;i<self.leftPointArr.count;i++ ) {
         if (i != 0) {
             
@@ -415,8 +422,16 @@
             [bezier1 addLineToPoint:point];
             
             if (i == self.leftPointArr.count-1) {
-                [beizer moveToPoint:point];//添加连线
-                lastPoint = point;
+//                [beizer moveToPoint:point];//添加连线
+//                lastPoint = point;
+                
+                if (self.leftDataArr.count == 7) {
+                    [beizer moveToPoint:point];//添加连线
+                    lastPoint = point;
+                }else{
+                    [beizer moveToPoint:CGPointMake(Xmargin * 6, bgViewHeight)];//添加连线
+                    lastPoint = CGPointMake(Xmargin * 6, bgViewHeight);
+                }
             }
             
             
@@ -426,7 +441,6 @@
         
     }
     
-    CGFloat bgViewHeight = self.bgView1.bounds.size.height;
     
     //获取最后一个点的X值
     CGFloat lastPointX = lastPoint.x;
